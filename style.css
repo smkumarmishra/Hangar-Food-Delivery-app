@@ -1,0 +1,631 @@
+/* Reset and base styles */
+
+/* :root {
+    --bg-dark: #0c1022;
+    --bg-light: #191f36;
+    --primary: #00ffee;
+    --primary-hover: #00ccaa;
+    --text-light: #ccc;
+    --text-white: white;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #fff;
+  color: #333;
+  /* overflow-x: hidden; */
+  overflow-y: visible;
+  outline: 1px solid rgba(255, 0, 0, 0.2);
+  /* will show if anything breaks out */
+}
+
+/* Header */
+.header {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 2px 6px rgba(59, 59, 59, 0.6);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  height: 80px;
+}
+
+.container-header {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: visible;
+}
+
+/* Logo */
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(
+    60deg,
+    #ff4e50,
+    #f9d423,
+    #56ab2f,
+    #43cea2,
+    #185a9d
+  );
+  background-size: 300%;
+  background-position: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 1s infinite alternate;
+  text-transform: capitalize;
+  position: relative;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 100%;
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: left;
+  }
+
+  100% {
+    background-position: right;
+  }
+}
+.logoImage {
+  position: absolute;
+  top: 8px;
+  left: -30px;
+}
+
+/* nav-menu-bar */
+.nav-bar-list {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-bar-list li a {
+  text-decoration: none;
+  color: var(--text-white);
+  font-size: 1rem;
+  transition: color 0.3s;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.nav-bar-list li a:hover {
+  color: rgb(161, 247, 161);
+  text-decoration: solid underline #6cf190;
+  text-decoration-thickness: 2px;
+  text-decoration-line: underline;
+  text-underline-offset: 6px;
+}
+
+/* Sign-in button */
+.sign-in {
+  padding: 0.5rem 1.2rem;
+  border: 1px solid #27ae60;
+  background: transparent;
+  color: #27ae60;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sign-in:hover {
+  background-color: #27ae60;
+  color: white;
+}
+
+/* Hamburger icon (hidden by default) */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* close */
+.close-btn {
+  font-size: 28px;
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  display: none;
+  /* only show in mobile */
+}
+
+/* ====================================main section/hero/all======================================= */
+
+/* main */
+.main-section-start {
+  max-width: 1200px;
+  margin: auto;
+  overflow-x: hidden;
+}
+
+/* HERO SECTION */
+.hero-section {
+  margin: 10px 0;
+}
+
+.carousel-item {
+  min-height: 10vh;
+  background-color: #111;
+  /* dark background so white text shows clearly */
+  color: white;
+}
+
+.carousel-item h1 {
+  color: white;
+}
+
+.carousel-item p {
+  color: #f1f1f1;
+}
+
+/* Base Button Styling */
+/* Custom Order Button */
+.order-btn {
+  background-color: #0ae14b !important;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  font-size: 1rem;
+}
+
+.order-btn:hover {
+  background-color: #02f266 !important;
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .carousel-item h1 {
+    font-size: 2rem;
+  }
+
+  .carousel-item p {
+    font-size: 1rem;
+  }
+}
+
+/* ====================================================smoll card style==================================================================== */
+
+/* ------------------------------- */
+#dish-slider::-webkit-scrollbar {
+  height: 6px;
+}
+
+#dish-slider::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+#dish-slider {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+#dish-slider {
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+#dish-slider::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari */
+}
+
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+  white-space: nowrap;
+  padding-bottom: 10px;
+}
+
+.dish-card {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dish-card img {
+  width: 100%;
+  height: 140px;
+
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.dish-card h6 {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* new card item style */
+
+#deal-slider::-webkit-scrollbar {
+  display: none;
+}
+
+#deal-slider {
+  scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.deal-card {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 250px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.deal-card:hover {
+  transform: scale(1.05);
+  /* zoom slightly */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  /* deeper shadow */
+  z-index: 10;
+  /* bring it to front */
+}
+
+.deal-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.deal-offer {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  background-color: red;
+  color: white;
+  font-size: 29px;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+
+.deal-card-body {
+  padding: 8px;
+  text-align: center;
+}
+
+.deal-rating {
+  font-size: 14px;
+  color: orange;
+}
+
+.deal-time {
+  font-size: 13px;
+  color: #666;
+}
+
+.deal-prize {
+  font-weight: 900;
+  font-size: 30px;
+  color: rgb(29, 223, 16);
+}
+
+/* ==================================slider button style==================================================================== */
+
+.btn-control {
+  padding: 5px 10px;
+  font-size: 1rem;
+}
+
+/* =================================================================card item ka style ===========================================*/
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  /* Thoda upar uthta hai */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  /* Gehri shadow */
+  z-index: 1;
+}
+
+/* ==================================================here is resturent designe======================================================== */
+
+.restaurant-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: #28a745;
+  text-decoration: none;
+}
+
+.restaurant-btn:hover {
+  background-color: #28a745;
+  color: white;
+}
+
+@media (min-width: 992px) {
+  .col-custom {
+    flex: 0 0 auto;
+    width: 25%;
+    /* 4 per row */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-custom {
+    flex: 0 0 auto;
+    width: 33.3333%;
+    /* 3 per row */
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .col-custom {
+    flex: 0 0 auto;
+    width: 50%;
+    /* 2 per row */
+  }
+}
+
+@media (max-width: 575px) {
+  .col-custom {
+    flex: 0 0 auto;
+    width: 100%;
+    /* 1 per row */
+  }
+}
+
+/*  ---------------------------------------------------------------- <!--FAQ Section Starts -->------------------------- */
+
+/* Hide Bootstrap's default arrow */
+.accordion-button::after {
+  display: none;
+}
+
+/* Smooth icon rotate */
+.accordion-button i {
+  transition: transform 0.3s ease;
+}
+
+/* Rotate + icon to X when open */
+.accordion-button[aria-expanded="true"] i {
+  transform: rotate(45deg);
+}
+
+.accordian-Q-text {
+  font-weight: 600;
+  color: #363636;
+}
+
+/* <!-- -------------------------------brand deals and names------------------------ --> */
+.brand-card {
+  width: 120px;
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.brand-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #28a745;
+  transition: transform 0.3s ease;
+  outline: none;
+}
+
+.brand-card img:hover {
+  transform: scaleX(1.06);
+  cursor: pointer;
+}
+
+.brand-name {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari */
+}
+
+/* Responsive scroll buttons */
+.brand-scroll-btn {
+  padding: 10px 14px;
+  font-size: 1rem;
+}
+
+/* ====================================================search-bar=============================================================== */
+.search-bar {
+  display: flex;
+  gap: 5px;
+}
+
+.search-bar input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 1;
+}
+
+.search-bar button {
+  padding: 8px 12px;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Search bar inside header */
+.search-bar {
+  max-width: 300px;
+}
+
+/* Mobile-specific search bar container */
+.mobile-search-container {
+  /* display: none;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0; */
+  position: sticky;
+  top: 77px;
+  /* adjust based on header height */
+  z-index: 998;
+  background-color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  display: none;
+  /* default hidden */
+}
+
+/* === MEDIA QUERY === */
+@media (max-width: 768px) {
+  /* Hide search bar inside header */
+  #searchBar {
+    display: none;
+  }
+
+  /* Show mobile search below */
+  .mobile-search-container {
+    display: block;
+  }
+
+  /* Optional: center logo and hamburger */
+  .container-header {
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* ===========================================show result style============================================================== */
+
+/* ====================================this is cart design============== */
+
+.cart-btn {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 5px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  gap: 5px;
+  position: relative;
+}
+
+.cart-count {
+  background: orange;
+  color: #fff;
+  padding: 2px 7px;
+  font-size: 12px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 8px;
+  box-shadow: 1px 1px 1px rgb(96, 96, 96);
+  position: relative;
+  top: -1px;
+}
+
+.cart-desktop {
+  display: block;
+}
+
+.cart-mobile {
+  display: none;
+}
+
+/* Responsive Switch */
+@media (max-width: 768px) {
+  .cart-desktop {
+    display: none;
+  }
+
+  .cart-mobile {
+    display: block;
+  }
+}
+
+/* --------------------------cart -offcanvas---------------------------------------------------- */
+.cart-sum-heading {
+  font-size: 20px;
+  font-weight: 900;
+  color: red;
+}
+
+/* =============================== */
+#empty-alert-container {
+  max-width: 300px;
+}
+
+/* alert box */
+
+.alert-box {
+  top: 55px;
+  margin: 0 500px;
+}
+
+.loginText {
+  background: linear-gradient(
+    to right,
+    #ff6a00,
+    #ffb347,
+    #f8de7e,
+    #a0e7e5,
+    #74c69d,
+    #6c63ff
+  );
+}
